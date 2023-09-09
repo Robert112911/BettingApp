@@ -27,6 +27,12 @@ namespace BettingApp.Data.EntriesMigrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<decimal>("Cota1")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Cota2")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 

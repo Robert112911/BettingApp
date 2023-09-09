@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BettingApp.Data.EntriesMigrations
 {
-    public partial class AddedFields1 : Migration
+    public partial class AddedAllNecessaryFieldsToMatchClass_1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,13 +16,15 @@ namespace BettingApp.Data.EntriesMigrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Name1 = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name2 = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Cota1 = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Cota2 = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Place = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Sport = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Score1 = table.Column<int>(type: "int", nullable: false),
                     Score2 = table.Column<int>(type: "int", nullable: false),
-                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Sport = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Place = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Winner = table.Column<int>(type: "int", nullable: true),
-                    Draw = table.Column<int>(type: "int", nullable: true)
+                    Winner = table.Column<int>(type: "int", nullable: false),
+                    Draw = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

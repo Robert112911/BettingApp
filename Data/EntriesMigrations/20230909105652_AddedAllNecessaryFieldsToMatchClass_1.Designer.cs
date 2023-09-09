@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BettingApp.Data.EntriesMigrations
 {
     [DbContext(typeof(EntriesDbContext))]
-    [Migration("20230909090329_AddedFields1")]
-    partial class AddedFields1
+    [Migration("20230909105652_AddedAllNecessaryFieldsToMatchClass_1")]
+    partial class AddedAllNecessaryFieldsToMatchClass_1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,6 +28,12 @@ namespace BettingApp.Data.EntriesMigrations
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<decimal>("Cota1")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Cota2")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
