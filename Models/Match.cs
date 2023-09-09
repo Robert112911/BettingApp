@@ -11,13 +11,15 @@ namespace BettingApp.Models
         [Required]
         public string Name2 { get; set; }
         [Required]
-        public int Score1;
+        public int Score1 {  get; set; }
         [Required]
-        public int Score2;
+        public int Score2 {  get; set; }
         [Required]
         public DateTime Date { get; set; }
         [Required]
-        public string Location;
+        public string Sport {  get; set; }
+        [Required]
+        public string Place {  get; set; }
         public int Winner {  get; set; }
         public int Draw {  get; set; }
     }

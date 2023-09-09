@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace BettingApp.Migrations
+namespace BettingApp.Data.EntriesMigrations
 {
-    public partial class Matches : Migration
+    public partial class AddedFields1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,9 +16,13 @@ namespace BettingApp.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Name1 = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name2 = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Score1 = table.Column<int>(type: "int", nullable: false),
+                    Score2 = table.Column<int>(type: "int", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Winner = table.Column<int>(type: "int", nullable: false),
-                    Draw = table.Column<int>(type: "int", nullable: false)
+                    Sport = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Place = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Winner = table.Column<int>(type: "int", nullable: true),
+                    Draw = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

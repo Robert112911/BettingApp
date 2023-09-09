@@ -4,18 +4,16 @@ using BettingApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace BettingApp.Migrations
+namespace BettingApp.Data.EntriesMigrations
 {
     [DbContext(typeof(EntriesDbContext))]
-    [Migration("20230908180812_Matches")]
-    partial class Matches
+    partial class EntriesDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,6 +38,20 @@ namespace BettingApp.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Place")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Score1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Score2")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Sport")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
