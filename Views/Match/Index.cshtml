@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Match>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Meciuri</h1>
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Juc&#259;tor 1</th>
+            <th>Juc&#259;tor 2</th>
+            <th>Cota 1</th>
+            <th>Cota 2</th>
+            <th>Data</th>
+            <th>Locul</th>
+            <th>Sport</th>
+            <th>Scor 1</th>
+            <th>Scor 2</th>
+            <th>Castig&#259;tor</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model)
+        {
+            <tr>
+                <td>@obj.Name1</td>
+                <td>@obj.Name2</td>
+                <td>@obj.Cota1</td>
+                <td>@obj.Cota2</td>
+                <td>@obj.Date</td>
+                <td>@obj.Name1</td>
+                <td>@obj.Sport</td>
+                <td>@obj.Score1</td>
+                <td>@obj.Score2</td>
+                <td>@obj.Winner</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

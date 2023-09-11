@@ -36,7 +36,7 @@ namespace BettingApp.Data.EntriesMigrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Draw")
+                    b.Property<int?>("Draw")
                         .HasColumnType("int");
 
                     b.Property<string>("Name1")
@@ -51,17 +51,17 @@ namespace BettingApp.Data.EntriesMigrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Score1")
+                    b.Property<int?>("Score1")
                         .HasColumnType("int");
 
-                    b.Property<int>("Score2")
+                    b.Property<int?>("Score2")
                         .HasColumnType("int");
 
                     b.Property<string>("Sport")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Winner")
+                    b.Property<int?>("Winner")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

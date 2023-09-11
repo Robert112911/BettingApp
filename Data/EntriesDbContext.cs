@@ -13,5 +13,18 @@ namespace BettingApp.Data
         }
 
         public DbSet<Match> Matches { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Match>()
+                .Property(m => m.Cota1)
+                .HasColumnType("decimal(18, 2)"); // Adjust precision and scale as needed
+
+            modelBuilder.Entity<Match>()
+                .Property(m => m.Cota2)
+                .HasColumnType("decimal(18, 2)"); // Configure Cota2 if necessary
+        }
     }
 }
