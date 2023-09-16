@@ -3,40 +3,52 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Meciuri</h1>
+<div class="containter p-3">
+    <div class="row pt-6">
+        <div class="col-6">
+            <h2 class="text-primary">Meciuri</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Match" asp-action="Add" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i>&nbsp;&nbsp;Adaug&#259; meci
+            </a>
+        </div>
+    </div>
+    <br/>
 
-<table class="table table-bordered table-striped" style="width:100%">
-    <thead>
-        <tr>
-            <th>Juc&#259;tor 1</th>
-            <th>Juc&#259;tor 2</th>
-            <th>Cota 1</th>
-            <th>Cota X</th>
-            <th>Cota 2</th>
-            <th>Data</th>
-            <th>Locul</th>
-            <th>Sport</th>
-            <th>Scor 1</th>
-            <th>Scor 2</th>
-            <th>C&#226;stig&#259;tor</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var obj in Model)
-        {
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
             <tr>
-                <td>@obj.Name1</td>
-                <td>@obj.Name2</td>
-                <td>@obj.Cota1</td>
-                <td>@obj.CotaX</td>
-                <td>@obj.Cota2</td>
-                <td>@obj.Date</td>
-                <td>@obj.Place</td>
-                <td>@obj.Sport</td>
-                <td>@obj.Score1</td>
-                <td>@obj.Score2</td>
-                <td>@obj.Winner</td>
+                <th>Juc&#259;tor 1</th>
+                <th>Juc&#259;tor 2</th>
+                <th>Cota 1</th>
+                <th>Cota X</th>
+                <th>Cota 2</th>
+                <th>Data</th>
+                <th>Locul</th>
+                <th>Sport</th>
+                <th>Scor 1</th>
+                <th>Scor 2</th>
+                <th>C&#226;stig&#259;tor</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td>@obj.Name1</td>
+                    <td>@obj.Name2</td>
+                    <td>@obj.Cota1</td>
+                    <td>@obj.CotaX</td>
+                    <td>@obj.Cota2</td>
+                    <td>@obj.Date</td>
+                    <td>@obj.Place</td>
+                    <td>@obj.Sport</td>
+                    <td>@obj.Score1</td>
+                    <td>@obj.Score2</td>
+                    <td>@obj.Winner</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

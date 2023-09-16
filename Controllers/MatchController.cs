@@ -19,5 +19,10 @@ namespace BettingApp.Controllers
 
             return View(objMatchList);
         }
+
+        public IActionResult Add()
+        {
+            return View();
+        }
     }
 }
