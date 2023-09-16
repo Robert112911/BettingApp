@@ -12,6 +12,7 @@ namespace BettingApp.Models
         public string Name2 { get; set; }
         [Required]
         public decimal Cota1 { get; set; }
+        public decimal? CotaX { get; set; }
         [Required]
         public decimal Cota2 { get; set; }
         [Required]

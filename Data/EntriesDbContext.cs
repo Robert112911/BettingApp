@@ -25,6 +25,10 @@ namespace BettingApp.Data
             modelBuilder.Entity<Match>()
                 .Property(m => m.Cota2)
                 .HasColumnType("decimal(18, 2)"); // Configure Cota2 if necessary
+
+            modelBuilder.Entity<Match>()
+                .Property(m => m.CotaX)
+                .HasColumnType("decimal(18, 2)");
         }
     }
 }

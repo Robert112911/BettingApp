@@ -12,7 +12,7 @@ namespace BettingApp.Controllers
         {
             _db = db;
         }
-
+        
         public IActionResult Index()
         {
             IEnumerable <Match> objMatchList = _db.Matches;
