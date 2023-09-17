@@ -3,5 +3,54 @@
     ViewData["Title"] = "Add";
 }
 
-<h1>Add</h1>
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Adaug&#259; meci</h2>
+            <hr />
+        </div>
 
+        <div class="mb-3">
+            <label asp-for="Sport">Sport</label>
+            <input asp-for="Sport" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Name1">Jucător/Echipă 1</label>
+            <input asp-for="Name1" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Name2">Jucător/Echipă 2</label>
+            <input asp-for="Name2" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Cota1">Cota 1</label>
+            <input asp-for="Cota1" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="CotaX">Cota X</label>
+            <input asp-for="CotaX" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Cota2">Cota 2</label>
+            <input asp-for="Cota2" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Date">Data</label>
+            <input asp-for="Date" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Place">Locul</label>
+            <input asp-for="Place" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:150px">Adaugă</button>
+
+    </div>
+</form>
