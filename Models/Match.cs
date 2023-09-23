@@ -2,6 +2,28 @@
 
 namespace BettingApp.Models
 {
+    // sports:
+    /* 
+     * Fotbal
+     * Futsal
+     * Baschet
+     * Handbal
+     * Volei
+     * Tenis
+     * Tenis de masă
+     * Badminton
+     * Fotbal American
+     * Rugby
+     * Box
+     * MMA
+     * Darts
+     * Snooker
+     * Counter:Strike
+     * League of Legends
+     * Dota 2
+     * Valorant
+     * Overwatch
+    */ 
     public class Match
     {
         [Key]

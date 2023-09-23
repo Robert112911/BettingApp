@@ -12,22 +12,47 @@
 
         <div class="mb-3">
             <label asp-for="Sport">Sport</label>
-            <input asp-for="Sport" class="form-control" />
+            <select asp-for="Sport" class="form-control">
+            <option value="">Alege sportul</option>
+            <option value="Fotbal">Fotbal</option>
+            <option value="Futsal">Futsal</option>
+            <option value="Baschet">Baschet</option>
+            <option value="Handbal">Handbal</option>
+            <option value="Volei">Volei</option>
+            <option value="Tenis">Tenis</option>
+            <option value="Tenis de masă">Tenis de masă</option>
+            <option value="Badminton">Badminton</option>
+            <option value="Fotbal American">Fotbal American</option>
+            <option value="Rugby">Rugby</option>
+            <option value="Box">Box</option>
+            <option value="MMA">MMA</option>
+            <option value="Darts">Darts</option>
+            <option value="Snooker">Snooker</option>
+            <option value="Counter:Strike">Counter:Strike</option>
+            <option value="League of Legends">League of Legends</option>
+            <option value="Dota 2">Dota 2</option>
+            <option value="Valorant">Valorant</option>
+            <option value="Overwatch">Overwatch</option>
+            </select>
+            <span asp-validation-for="Sport" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="Name1">Jucător/Echipă 1</label>
             <input asp-for="Name1" class="form-control" />
+            <span asp-validation-for="Name1" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="Name2">Jucător/Echipă 2</label>
             <input asp-for="Name2" class="form-control" />
+            <span asp-validation-for="Name2" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="Cota1">Cota 1</label>
             <input asp-for="Cota1" class="form-control" />
+            <span asp-validation-for="Cota1" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
@@ -38,16 +63,19 @@
         <div class="mb-3">
             <label asp-for="Cota2">Cota 2</label>
             <input asp-for="Cota2" class="form-control" />
+            <span asp-validation-for="Cota2" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="Date">Data</label>
             <input asp-for="Date" class="form-control" />
+            <span asp-validation-for="Date" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="Place">Locul</label>
             <input asp-for="Place" class="form-control" />
+            <span asp-validation-for="Place" class="text-danger"></span>
         </div>
 
         <button type="submit" class="btn btn-primary" style="width:150px">Adaugă</button>

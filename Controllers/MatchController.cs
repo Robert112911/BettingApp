@@ -19,10 +19,25 @@ namespace BettingApp.Controllers
 
             return View(objMatchList);
         }
-
+        // GET
         public IActionResult Add()
         {
             return View();
         }
+        // POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Add(Match obj)
+        {
+            if (ModelState.IsValid)
+            {
+                obj.Id = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + "_" + Methods.RandomString(10);
+                _db.Matches.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+        
     }
 }
