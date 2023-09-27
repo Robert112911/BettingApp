@@ -31,7 +31,7 @@ namespace BettingApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                obj.Id = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + "_" + Methods.RandomString(10);
+                obj.Id = DateTime.Now.Day.ToString() + "_" + DateTime.Now.Month.ToString() + "_" + DateTime.Now.Year.ToString() + "_" + Methods.RandomString(10);
                 _db.Matches.Add(obj);
                 _db.SaveChanges();
                 return RedirectToAction("Index");

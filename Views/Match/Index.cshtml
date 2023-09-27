@@ -16,27 +16,71 @@
     </div>
     <br/>
 
+    @{
+        DateTime now = DateTime.Now;
+        string dateDisplayed;
+        string timeDisplayed;
+    }
+
     @foreach(var obj in Model)
     {
-        @if (!(obj.Sport == "Fotbal" || obj.Sport == "Futsal" || obj.Sport == "Handbal" || obj.Sport == "Rugby"))
+        if (now < obj.Date && obj.Winner == null && obj.Draw == null)
         {
-            <table class="table" style="width:50%">
-                <thead>
-                    <tr>
-                        <th>@obj.Sport</th>
-                        <th>1</th>
-                        <th>2</th>
-                    </tr>
-                </thead>
+            var diffOfDates = obj.Date - now;
 
-                <tbody>
-                    <tr>
-                        <td>@obj.Name1<br>@obj.Name2</td>
-                        <td>@obj.Cota1</td>
-                        <td>@obj.Cota2</td>
-                    </tr>
-                </tbody>
-            </table>
+            timeDisplayed = obj.Date.ToString();
+            timeDisplayed = timeDisplayed[11].ToString() + timeDisplayed[12].ToString() + timeDisplayed[13].ToString() + timeDisplayed[14].ToString() + timeDisplayed[15].ToString();
+
+            if ((int)diffOfDates.Days < 7)
+                dateDisplayed = Methods.TranslateDayOfWeek(obj.Date.DayOfWeek);
+            else
+                dateDisplayed = obj.Date.Day.ToString() + "." + obj.Date.Month.ToString();
+
+
+            if (!(obj.Sport == "Fotbal" || obj.Sport == "Futsal" || obj.Sport == "Handbal" || obj.Sport == "Rugby"))
+            {
+                <table class="table" style="width:50%">
+                    <thead>
+                        <tr>
+                            <th colspan="2">@obj.Sport</th>
+                            <th>1</th>
+                            <th>2</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>@dateDisplayed<br/>@timeDisplayed</td>
+                            <td>@obj.Name1<br>@obj.Name2</td>
+                            <td>@obj.Cota1</td>
+                            <td>@obj.Cota2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <table class="table" style="width:50%">
+                    <thead>
+                        <tr>
+                            <th colspan="2">@obj.Sport</th>
+                            <th>1</th>
+                            <th>X</th>
+                            <th>2</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>@dateDisplayed<br />@timeDisplayed</td>
+                            <td>@obj.Name1<br>@obj.Name2</td>
+                            <td>@obj.Cota1</td>
+                            <td>@obj.CotaX</td>
+                            <td>@obj.Cota2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            }
         }
     }
 </div>

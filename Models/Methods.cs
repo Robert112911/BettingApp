@@ -18,5 +18,39 @@ namespace BettingApp.Models
             
             return sb.ToString();
         }
+
+        public static string TranslateDayOfWeek(DayOfWeek day)
+        {
+            switch(day)
+            {
+                case DayOfWeek.Monday:
+                    return "LUNI";
+                    break;
+
+                case DayOfWeek.Tuesday:
+                    return "MAR.";
+                    break;
+
+                case DayOfWeek.Wednesday:
+                    return "MIE.";
+                    break;
+
+                case DayOfWeek.Thursday:
+                    return "JOI";
+                    break;
+
+                case DayOfWeek.Friday:
+                    return "VIN.";
+                    break;
+
+                case DayOfWeek.Saturday:
+                    return "SÂM.";
+                    break;
+
+                default:
+                    return "DUM.";
+                    break;
+            }
+        }
     }
 }
